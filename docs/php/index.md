@@ -200,7 +200,7 @@ Swagger is built into Tina4 and found at `/swagger`. Adding the `@description` a
     return $response((new User())->select("*"));
 });
 ```
-Follow the links for more on [Configuration](swagger.md#config), [Usage](swagger.md#usage) and [Annotations](swagger.md#annotations).
+Follow the links for more on [Configuration](swagger.md#config), [Annotations](swagger.md#annotations) and  [Usage](swagger.md#usage).
 
 ### Databases {#databases}
 

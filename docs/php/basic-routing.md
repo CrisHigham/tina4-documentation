@@ -53,7 +53,7 @@ return $response("my-twig-file.twig", HTTP_OK, TEXT_HTML);
 // redirects are useful for posts to stop refresh button reposts
 return \Tina4\redirect("/welcome");
 ```
-## Route Security
+## Route Security {#route-security}
 All POST routes require the need to pass security by default. Security can be added to other routes using the `@secure` annotation.
 ```php
 /**
