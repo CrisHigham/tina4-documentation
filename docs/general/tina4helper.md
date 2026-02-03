@@ -31,7 +31,8 @@ Just include it once:
 
 ### `saveForm(formId, url, targetElement, callback)`
 
-**The #1 most used function** – submits a form securely.
+**The #1 most used function** – submits a form securely. Mutually exclusive response options. Use the targetElement to 
+insert the response into your HTML, OR run a callback function. 
 
 ```js
 saveForm("loginForm", "/login", "message", function() {
@@ -69,7 +70,7 @@ showForm("delete", "/articles/42/delete", "form"); // DELETE
 
 ### `showMessage("Success!")`
 
-Beautiful Bootstrap 5 alert:
+Beautiful Bootstrap 5 alert inserted into the "message" html element.
 
 ```js
 showMessage("User created successfully!");
@@ -78,24 +79,19 @@ showMessage("User created successfully!");
 ---
 
 ## Automatic Form Token Handling
-
+The first line in Tina4Helper.js declares the `formToken` variable.
 ```js
 var formToken = null;   // Filled automatically from FreshToken header
 ```
 
-Every successful request that returns a `FreshToken` header:
-- Updates the global `formToken`
-- **Automatically refreshes** every `<input name="formToken">` in your forms
-
-Just include the token once in your template:
-
-```twig
-{{ form_token() }}
+The following requests will return a `FreshToken` header which automatically updates the global `formToken` variable,
+even on dynamic forms loaded via `loadPage()`.
+```js
+loadPage(...);
+showForm(...);
+postUrl(...);
+getRoute(...);
 ```
-
-`tina4helper.js` does the rest — even on dynamic forms loaded via `loadPage()`.
-
----
 
 ## File Uploads – Zero Effort
 
