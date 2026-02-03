@@ -215,7 +215,7 @@ The initial database connection in `index.php` might differ due to database sele
 global $DBA;
 $DBA = new \Tina4\DataSQLite3("database/myDatabase.db", "username", "my-password", "d/m/Y");
 ```
-Follow the links for more on [Available Connections](database.md#connections), [Core Methods](database.md#core-methods), [Usage](database.md#usage) and [Full transaction control](database.md#transactions).
+Follow the links for more on [Available Connections](database.md#connections), [Core Methods](database.md#core-methods), [Usage](database.md#usage), [Some Examples](database.md#examples) and [Full transaction control](database.md#transactions).
 
 ### Database Results {#database-results}
 Returning a single row is as easy as 
@@ -231,7 +231,7 @@ $dataResult = $DBA->fetch("select * from test_record order by id", 3, 1);
 $list = $dataResult->asArray();
 $array = $dataResult->asObject();
 ```
-Looking at detailed [Usage](database.md#usage) will improve deeper understanding.
+Looking at detailed [Usage](database.md#usage) and some [Examples](database.md#examples) will improve deeper understanding.
 
 ### Migrations {#migrations}
 Migrations are available as cli commands. This command will create a migration file in the migrations folder. Just add your sql.
