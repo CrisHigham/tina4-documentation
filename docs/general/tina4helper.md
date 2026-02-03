@@ -79,24 +79,19 @@ showMessage("User created successfully!");
 ---
 
 ## Automatic Form Token Handling
-
+The first line in Tina4Helper.js declares the `formToken` variable.
 ```js
 var formToken = null;   // Filled automatically from FreshToken header
 ```
 
-Every successful request that returns a `FreshToken` header:
-- Updates the global `formToken`
-- **Automatically refreshes** every `<input name="formToken">` in your forms, when using `saveForm()`.
-
-Just include the token once in your template:
-
-```twig
-{{ form_token() }}
+The following requests will return a `FreshToken` header which automatically updates the global `formToken` variable,
+even on dynamic forms loaded via `loadPage()`.
+```js
+loadPage(...);
+showForm(...);
+postUrl(...);
+getRoute(...);
 ```
-
-`tina4helper.js` does the rest — even on dynamic forms loaded via `loadPage()`.
-
----
 
 ## File Uploads – Zero Effort
 
