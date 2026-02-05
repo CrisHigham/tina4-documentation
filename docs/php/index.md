@@ -251,7 +251,8 @@ http://localhost:7145/migrate/create
 
 http://localhost:7145/migrate
 ```
-[Migrations](migrations.md) do have some limitations and considerations when used extensively.
+More details are available on [Migrations](migrations.md), their [Creation](migrations.md#creation), [Running](migrations.md#running) 
+them and [integration with ORM](migrations.md#orm).
 
 ### ORM {#orm}
 
